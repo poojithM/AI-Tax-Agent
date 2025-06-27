@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The **AI Tax Agent** is a streamlined web application designed to simplify tax filing using **2025 U.S. federal tax rules**. It collects essential user inputs—such as **income, filing status, tax withheld, and dependents**—and performs automated tax calculations to determine refunds or amounts owed. Featuring a **downloadable report**, this prototype demonstrates how AI can enhance accuracy and reduce the complexity of tax preparation for individuals.
+The **AI Tax Agent** is a streamlined web application designed to simplify tax filing using **2025 U.S. federal tax rules**. It collects essential user inputs such as **income, filing status, tax withheld, and dependents** and performs automated tax calculations to determine refunds or amounts owed. Featuring a **downloadable report**, this prototype demonstrates how AI can enhance accuracy and reduce the complexity of tax preparation for individuals.
 
 ---
 
@@ -45,22 +45,22 @@ The **AI Tax Agent** is a streamlined web application designed to simplify tax f
    git clone <repository-url>
   
 2.**Install Dependencies**:
-```bash
+  ```bash
 
-pip install -r requirements.txt
-```
+  pip install -r requirements.txt
+  ```
 
 3.**Configure Environment:
-```bash
-Set up necessary variables in the .env file.
-```
+   ```bash
+   Set up necessary variables in the .env file.
+   ```
 
 4**Launch the Application**:
-```bash
-python app.py
-```
+   ```bash
+   python app.py
+   ```
 
 5**Access the App**:
-```bash
-Open your browser at http://localhost:5000 to begin using the AI Tax Agent
-```
+   ```bash
+   Open your browser at http://localhost:5000 to begin using the AI Tax Agent
+   ```
