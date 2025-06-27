@@ -1,0 +1,7 @@
+crewai
+crewai[tools]
+langchain_community
+streamlit
+flask
+langchain_openai
+markdown

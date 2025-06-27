@@ -1,0 +1,165 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+/* 🔝 Top Bar */
+.top-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 98%;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 20px; /* reduced padding */
+    background-color: #ffffff; /* solid white */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.logo-small {
+    height: 30px;
+    width: auto;
+    margin-right: 10px;
+}
+
+
+.site-title {
+    font-size: 22px;
+    font-weight: 600;
+    color: #2c3e50;
+    white-space: nowrap;
+}
+
+
+/* ⬛ Centered Main Container */
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+    padding: 120px 40px 40px; /* ⬅ top padding increased */
+}
+
+/* 🎁 Card in the center */
+.card {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.card h1 {
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.tagline {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* 📥 Form */
+form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    text-align: left;
+    color: #333;
+}
+
+form input[type="number"],
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 12px 20px;
+    background-color: #28a745;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+/* 📤 Result Box */
+.one-line {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+/* 📎 Download Buttons */
+.button-group {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.button-group button {
+    background-color: #007bff;
+    color: white;
+    font-weight: 600;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.button-group button:hover {
+    background-color: #0056b3;
+}
+
+.loader-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #007bff;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 10px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}

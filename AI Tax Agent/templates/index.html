@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AI Tax Estimator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- 🔝 Top Bar -->
+    <div class="top-bar">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo-small">
+        <div class="site-title">Poojith Mendem</div>
+    </div>
+
+    <!-- ⬛ Centered Container -->
+    <div class="main-container">
+        <div class="card">
+
+            <h1>AI Tax Estimator</h1>
+            <p class="tagline">Your intelligent tax assistant at your service.</p>
+
+            <!-- 📥 Form -->
+            <form method="post">
+                <label for="income">Annual Income (USD):</label>
+                <input type="number" id="income" name="income" step="0.01" placeholder="e.g., 70000.00" required>
+
+                <label for="tax_withheld">Tax Withheld (USD):</label>
+                <input type="number" id="tax_withheld" name="tax_withheld" step="0.01" placeholder="e.g., 8000.00" required>
+
+                <label for="filing_status">Filing Status:</label>
+                <select id="filing_status" name="filing_status" required>
+                    <option value="">-- Select --</option>
+                    <option value="single">Single</option>
+                    <option value="married_filing_jointly">Married Filing Jointly</option>
+                    <option value="married_filing_separately">Married Filing Separately</option>
+                    <option value="head_of_household">Head of Household</option>
+                </select>
+
+                <!-- ✨ New Field for Dependents -->
+<label for="dependents">Number of Dependents:</label>
+<input type="number" id="dependents" name="dependents" min="0" placeholder="e.g., 2" required>
+
+<!-- ✨ Deduction Type -->
+<label for="deductions">Deduction Type:</label>
+<select id="deductions" name="deductions" required onchange="toggleItemizedFields()">
+  <option value="">-- Select --</option>
+  <option value="standard">Standard Deduction</option>
+  <option value="itemized">Itemized Deduction</option>
+</select>
+
+<!-- ✨ Itemized Fields Container -->
+<div id="itemized-fields" style="display: none;">
+  <label for="mortgage">Mortgage Interest:</label>
+  <input type="number" name="mortgage" step="0.01" placeholder="e.g., 6000.00">
+
+  <label for="medical">Medical Expenses:</label>
+  <input type="number" name="medical" step="0.01" placeholder="e.g., 3000.00">
+
+  <label for="charity">Charitable Donations:</label>
+  <input type="number" name="charity" step="0.01" placeholder="e.g., 2500.00">
+
+  <label for="state_taxes">State and Local Taxes:</label>
+  <input type="number" name="state_taxes" step="0.01" placeholder="e.g., 5000.00">
+</div>
+
+
+
+                <button type="submit">Submit & Calculate</button>
+
+                <div id="loader" style="display: none;" class="loader-container">
+                <div class="spinner"></div>
+                <p>Working on it... Please wait</p>
+</div>
+
+            </form>
+
+            <!-- ✅ Result -->
+            {% if result %}
+                <h2>Tax Summary</h2>
+                <p class="one-line">{{ result }}</p>
+
+                {% if report_filename %}
+                <div class="button-group">
+                    <a href="{{ url_for('view_report') }}" target="_blank">
+                        <button type="button">📄 View Report</button>
+                    </a>
+
+                    <a href="{{ url_for('static', filename=report_filename) }}" download>
+                        <button type="button">⬇ Download Report</button>
+                    </a>
+                </div>
+                {% endif %}
+            {% endif %}
+
+        </div>
+    </div>
+    <script>
+    const form = document.querySelector("form");
+    const loader = document.getElementById("loader");
+
+    form.addEventListener("submit", () => {
+        loader.style.display = "flex";
+    });
+</script>
+
+<script>
+function toggleItemizedFields() {
+  const deductionSelect = document.getElementById('deductions');
+  const itemizedFields = document.getElementById('itemized-fields');
+  if (deductionSelect.value === 'itemized') {
+    itemizedFields.style.display = 'block';
+  } else {
+    itemizedFields.style.display = 'none';
+  }
+}
+</script>
+
+
+</body>
+</html>
