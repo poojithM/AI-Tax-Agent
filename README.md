@@ -43,6 +43,7 @@ The **AI Tax Agent** is a streamlined web application designed to simplify tax f
 1. **Clone the Repository**:
    ```bash
    git clone <repository-url>
+   ```
   
 2.**Install Dependencies**:
   ```bash
