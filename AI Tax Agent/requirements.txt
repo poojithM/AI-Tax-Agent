@@ -1,7 +1,9 @@
-crewai
 crewai[tools]
 langchain_community
 streamlit
 flask
 langchain_openai
 markdown
+crewai==0.11.2
+openai>=1.13.3
+jiter==0.6.1
