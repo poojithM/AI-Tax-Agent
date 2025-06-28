@@ -4,22 +4,23 @@
     <meta charset="UTF-8">
     <title>AI Tax Estimator</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <!-- 🔝 Top Bar -->
+    <!--  Top Bar -->
     <div class="top-bar">
         <img src="{{ url_for('static', filename='logo.png') }}" alt="Logo" class="logo-small">
         <div class="site-title">Poojith Mendem</div>
     </div>
 
-    <!-- ⬛ Centered Container -->
+    <!--  Centered Container -->
     <div class="main-container">
         <div class="card">
 
             <h1>AI Tax Estimator</h1>
             <p class="tagline">Your intelligent tax assistant at your service.</p>
 
-            <!-- 📥 Form -->
+            <!--  Form -->
             <form method="post">
                 <label for="income">Annual Income (USD):</label>
                 <input type="number" id="income" name="income" step="0.01" placeholder="e.g., 70000.00" required>
@@ -36,11 +37,11 @@
                     <option value="head_of_household">Head of Household</option>
                 </select>
 
-                <!-- ✨ New Field for Dependents -->
+                <!--  New Field for Dependents -->
 <label for="dependents">Number of Dependents:</label>
 <input type="number" id="dependents" name="dependents" min="0" placeholder="e.g., 2" required>
 
-<!-- ✨ Deduction Type -->
+<!--  Deduction Type -->
 <label for="deductions">Deduction Type:</label>
 <select id="deductions" name="deductions" required onchange="toggleItemizedFields()">
   <option value="">-- Select --</option>
@@ -48,7 +49,7 @@
   <option value="itemized">Itemized Deduction</option>
 </select>
 
-<!-- ✨ Itemized Fields Container -->
+<!--  Itemized Fields Container -->
 <div id="itemized-fields" style="display: none;">
   <label for="mortgage">Mortgage Interest:</label>
   <input type="number" name="mortgage" step="0.01" placeholder="e.g., 6000.00">
@@ -74,7 +75,7 @@
 
             </form>
 
-            <!-- ✅ Result -->
+            <!--  Result -->
             {% if result %}
                 <h2>Tax Summary</h2>
                 <p class="one-line">{{ result }}</p>
