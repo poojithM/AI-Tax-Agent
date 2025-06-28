@@ -7,7 +7,7 @@ import shutil
 import json
 
 #Initialize Flask App
-app = Flask(__name__)
+app = Flask(__name__, static_folder="static", template_folder ="templates")
 
 #Ensure to save tex_report markdown file
 REPORTS_DIR = "reports"
