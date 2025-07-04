@@ -51,17 +51,17 @@ git clone <repository-url>
   pip install -r requirements.txt
   ```
 
-3.**Configure Environment:
+3.**Configure Environment**:
    ```bash
    Set up necessary variables in the .env file.
    ```
 
-4**Launch the Application**:
+4.**Launch the Application**:
    ```bash
    python app.py
    ```
 
-5**Access the App**:
+5.**Access the App**:
    ```bash
    Open your browser at http://localhost:5000 to begin using the AI Tax Agent
    ```
